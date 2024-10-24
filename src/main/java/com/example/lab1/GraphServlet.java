@@ -32,7 +32,7 @@ public class GraphServlet extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html><body><h2>Adjacency Matrix</h2><table border='1'>");
+        out.println("<html><body><h2>Matrix</h2><table border='1'>");
 
         for (int i = 0; i < numVertices; i++) {
             out.println("<tr>");
@@ -41,7 +41,6 @@ public class GraphServlet extends HttpServlet {
             }
             out.println("</tr>");
         }
-
         out.println("</table></body></html>");
     }
 
@@ -52,7 +51,6 @@ public class GraphServlet extends HttpServlet {
         for (int i = 0; i < numEdges; i++) {
             int u = rand.nextInt(numVertices);
             int v = rand.nextInt(numVertices);
-            // Avoid self-loops and duplicate edges
             if (u != v && matrix[u][v] == 0) {
                 matrix[u][v] = 1;
                 matrix[v][u] = 1;

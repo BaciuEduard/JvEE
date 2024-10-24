@@ -1,13 +1,20 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+<h2>Upload a Text File</h2>
+<form action="FileUploadServlet" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".txt" required />
+    <div class="g-recaptcha" data-sitekey="6LcREWoqAAAAAFXkJhiqd-vTx6fHpRxDkUwBgcNt">
+    </div>
+    <input type="submit" value="Upload File" />
+</form>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<br>
 </body>
 </html>
